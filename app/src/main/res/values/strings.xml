@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Googlyyy</string>
+    <string name="login_page_title">TechNoUtsav</string>
+    <string name="Coord_login_title">Coordinator Login</string>
+    <string name="Coord_login">Login</string>
+</resources>

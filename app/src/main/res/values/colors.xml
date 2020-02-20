@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F0134D</color>
+    <color name="colorPrimaryDark">#090808</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="stCoordSign">#4A69B8</color>
+    <color name="endCoordSign">#CD4DCC</color>
+    <color name="CoordLogin_btn">#8240BB</color>
+    <color name="stlan_coord_info">#037EF3</color>
+    <color name="endlan_coord_info">#30C39E</color>
+</resources>

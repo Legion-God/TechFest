@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:layout_height="match_parent"
+    tools:context=".coordinator_login">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/coord_login_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="55dp"
+            android:text="@string/Coord_login_title"
+            android:textColor="#FFF"
+            android:textSize="45sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.326"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/coord_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/coord_form_border"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:paddingStart="25dp"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/coord_sign_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coord_email" />
+
+        <EditText
+            android:id="@+id/coord_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/coord_form_border"
+            android:ems="10"
+            android:hint="Email:"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:paddingStart="25dp"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/coord_pass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/coord_sign_in"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/coord_login_btn"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:text="@string/Coord_login"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coord_pass" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
