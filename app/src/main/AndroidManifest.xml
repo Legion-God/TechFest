@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".lan_finished"></activity>
+        <activity android:name=".sumo_finished"></activity>
+        <activity android:name=".sumo_upcoming" />
+        <activity android:name=".sumo_live" />
+        <activity android:name=".sumo_menu" />
+        <activity android:name=".lan_finished" />
         <activity android:name=".lan_upcoming" />
         <activity android:name=".lan_live" />
         <activity android:name=".lan_game_menu" />
