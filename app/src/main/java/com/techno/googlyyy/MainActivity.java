@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      Button signOutbutton;
      Button coord_log;
 
+     //TODO: add proper sign out option with Not you option in another activity linked to this,
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
 
