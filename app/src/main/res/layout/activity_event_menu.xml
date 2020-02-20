@@ -148,6 +148,21 @@
 
 
 
+            <androidx.cardview.widget.CardView
+                android:layout_margin="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorPrimaryDark">
+
+                <Button
+                    android:id="@+id/settings_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_settings" />
+
+            </androidx.cardview.widget.CardView>
+
+
         </GridLayout>
 
 

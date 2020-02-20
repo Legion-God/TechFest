@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      Button coord_log;
 
      //TODO: add proper sign out option with Not you option in another activity linked to this,
+    //TODO: add animation and progress bars.
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
 
@@ -97,6 +98,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(MainActivity.this, "You are Signed In!", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
                     Toast.makeText(MainActivity.this, "Email: "+user.getEmail(), Toast.LENGTH_SHORT).show();
+
+                    //On successful login go to event page
+                    goToEvent();
                 }else {
                     Toast.makeText(MainActivity.this, "You are fucked Up!", Toast.LENGTH_SHORT).show();
                 }
@@ -127,6 +131,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void goToCoordinator(){
         Intent coord_intent = new Intent(this, coordinator_login.class);
         startActivity(coord_intent);
+    }
+
+    private void goToEvent(){
+        Intent event_intent = new Intent(this, event_menu.class);
+        startActivity(event_intent);
+        finish();
     }
 
     @Override

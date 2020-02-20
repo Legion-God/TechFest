@@ -29,43 +29,44 @@
 
 
         <Button
-            android:id="@+id/lan_live_menu_btn"
+            android:id="@+id/lan_live_btn"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="176dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/btn_live_match"
-            android:onClick="goLive"
-            app:layout_constraintBottom_toTopOf="@+id/lan_upcoming_menu_btn"
+            app:layout_constraintBottom_toTopOf="@+id/lan_upcoming_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lan_title" />
 
         <Button
-            android:id="@+id/lan_upcoming_menu_btn"
+            android:id="@+id/lan_upcoming_btn"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/btn_upcoming"
-            app:layout_constraintBottom_toTopOf="@+id/lan_finished_menu_btn"
+            app:layout_constraintBottom_toTopOf="@+id/lan_finished_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lan_live_menu_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/lan_live_btn" />
 
 
         <Button
-            android:id="@+id/lan_finished_menu_btn"
+            android:id="@+id/lan_finished_btn"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/btn_finished"
+            app:layout_constraintBottom_toTopOf="@+id/coordinator_info"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lan_upcoming_menu_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/lan_upcoming_btn" />
 
         <TextView
             android:id="@+id/coordinator_info"
@@ -82,7 +83,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lan_finished_menu_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/lan_finished_btn" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
