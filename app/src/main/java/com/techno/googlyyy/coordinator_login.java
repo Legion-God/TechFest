@@ -3,6 +3,7 @@ package com.techno.googlyyy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -53,7 +54,7 @@ public class coordinator_login extends AppCompatActivity implements View.OnClick
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    //TODO: Go to coordinator edit activity
+                    goToCoordMenu();
                     Toast.makeText(coordinator_login.this, "Coordinator Signed In!", Toast.LENGTH_SHORT).show();
             }else{
                     Toast.makeText(coordinator_login.this, "Something's Wrong", Toast.LENGTH_SHORT).show();
@@ -61,6 +62,13 @@ public class coordinator_login extends AppCompatActivity implements View.OnClick
             }
         });
     }
+
+    private void goToCoordMenu(){
+        Intent coord_intent = new Intent(this, coord_main_menu.class);
+        startActivity(coord_intent);
+        finish();
+    }
+
 
     @Override
     public void onClick(View v) {

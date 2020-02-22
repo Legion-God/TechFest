@@ -8,4 +8,6 @@
     <color name="CoordLogin_btn">#8240BB</color>
     <color name="stlan_coord_info">#037EF3</color>
     <color name="endlan_coord_info">#30C39E</color>
+    <color name="st_logout">#FF416C</color>
+    <color name="end_logout">#FF4B2B</color>
 </resources>

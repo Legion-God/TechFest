@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".sumo_finished"></activity>
+        <activity android:name=".coord_information"></activity>
+        <activity android:name=".coord_team_register" />
+        <activity android:name=".coord_finished" />
+        <activity android:name=".coord_upcoming" />
+        <activity android:name=".coord_live" />
+        <activity android:name=".coord_main_menu" />
+        <activity android:name=".sumo_finished" />
         <activity android:name=".sumo_upcoming" />
         <activity android:name=".sumo_live" />
         <activity android:name=".sumo_menu" />
