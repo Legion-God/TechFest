@@ -61,7 +61,7 @@ public class coord_registered_team extends AppCompatActivity {
         teams = new ArrayList<>();//stores teams
     }
 
-    //refreshes activity 
+    //refreshes activity
     private void refresh(){
         finish();
         //overridePendingTransition(0,0);
@@ -73,39 +73,62 @@ public class coord_registered_team extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        Query q = mDatabase.orderByChild("team_num");
+                q.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
 
-        ValueEventListener queryValueListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        cmn_team_structure single_team_obj = dataSnapshot.getValue(cmn_team_structure.class);
 
-                teams.clear();
 
-                Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
-                Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
+                        team_adapter_list tAdapter = new team_adapter_list(coord_registered_team.this, teams);
+                        tAdapter.add(single_team_obj);
+                        tAdapter.notifyDataSetChanged();
+                        listViewTeams.setAdapter(tAdapter);
+                    }
 
-                while (iterator.hasNext()) {
-                    DataSnapshot next = iterator.next();
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                    cmn_team_structure sumoTeam = next.getValue(cmn_team_structure.class);
-                    teams.add(sumoTeam);
+                        cmn_team_structure single_team_obj = dataSnapshot.getValue(cmn_team_structure.class);
 
-                }
+                        team_adapter_list tAdapter = new team_adapter_list(coord_registered_team.this, teams);
 
-                team_adapter_list tAdapter = new team_adapter_list(coord_registered_team.this, teams);
-                listViewTeams.setAdapter(tAdapter);
+                        tAdapter.add(single_team_obj);
+                        tAdapter.notifyDataSetChanged();
 
-               // refresh();
-            }
+                        refresh();
+                        listViewTeams.setAdapter(tAdapter);
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                    }
 
-            }
-        };
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
 
-        Query query = mDatabase.orderByChild("team_num");
-        query.addListenerForSingleValueEvent(queryValueListener);
+                        cmn_team_structure single_team_obj = dataSnapshot.getValue(cmn_team_structure.class);
+
+
+
+                        team_adapter_list tAdapter = new team_adapter_list(coord_registered_team.this, teams);
+                        tAdapter.remove(single_team_obj);
+
+                        refresh();
+                        listViewTeams.setAdapter(tAdapter);
+
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
     }
 
     private void deleteTeam(String tnum){
@@ -114,7 +137,7 @@ public class coord_registered_team extends AppCompatActivity {
         del.removeValue();
         Toast.makeText(this, "Team Deleted", Toast.LENGTH_SHORT).show();
 
-        refresh();
+
     }
 
     private void deleteDialog(String tname,final String tnum){
