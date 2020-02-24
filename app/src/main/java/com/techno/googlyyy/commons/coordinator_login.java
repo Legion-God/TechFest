@@ -1,4 +1,4 @@
-package com.techno.googlyyy;
+package com.techno.googlyyy.commons;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.techno.googlyyy.R;
+import com.techno.googlyyy.coord_sumo.coord_main_menu;
+import com.techno.googlyyy.coord_sumo.coord_registered_team;
 
 public class coordinator_login extends AppCompatActivity implements View.OnClickListener {
 
@@ -39,6 +42,7 @@ public class coordinator_login extends AppCompatActivity implements View.OnClick
         FirebaseUser user = mAuth.getCurrentUser();
         if(user!= null){
             //TODO: if current user is signed in go to coordinator edit activity
+
         }
 
     }
@@ -47,13 +51,18 @@ public class coordinator_login extends AppCompatActivity implements View.OnClick
         EditText tempEmail = findViewById(R.id.coord_email);
         EditText tempPass = findViewById(R.id.coord_pass);
 
-        String email = tempEmail.getText().toString();
+        final String email = tempEmail.getText().toString();
         String password = tempPass.getText().toString();
 
         mAuth.signInWithEmailAndPassword(email ,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+
+                    /* if(email.equals("test@gcoec.com")){
+                        test();
+                        return;
+                    } */
                     goToCoordMenu();
                     Toast.makeText(coordinator_login.this, "Coordinator Signed In!", Toast.LENGTH_SHORT).show();
             }else{
@@ -61,6 +70,11 @@ public class coordinator_login extends AppCompatActivity implements View.OnClick
                 }
             }
         });
+    }
+
+    private void test(){
+            startActivity(new Intent(this, coord_registered_team.class));
+            //TODO: remove this function, proof of concept to launch activities based on email ID.
     }
 
     private void goToCoordMenu(){

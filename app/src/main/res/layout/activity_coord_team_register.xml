@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
-    tools:context=".coord_team_register">
+    android:background="@drawable/team_register_bg"
+    tools:context=".coord_sumo.coord_team_register">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/team_register_bg"
       >
 
 
@@ -35,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="95dp"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/coord_form_border"
             android:ems="10"
             android:hint="Team Name: "
@@ -51,6 +50,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/team_register_text" />
 
+        <EditText
+            android:id="@+id/team_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/coord_form_border"
+            android:ems="10"
+            android:hint="Team Number: "
+            android:inputType="numberSigned"
+            android:padding="15dp"
+            android:paddingStart="25dp"
+            android:textColor="#FFFF"
+            android:textColorHint="#FFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/register_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/team_name" />
+
         <Button
             android:id="@+id/register_btn"
             style="@style/Widget.AppCompat.Button.Borderless"
@@ -65,10 +85,32 @@
             android:textAllCaps="false"
             android:textColor="#FFF"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view_teams_btn"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/team_name" />
+
+        <Button
+            android:id="@+id/view_teams_btn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/team_btn"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:text="View Teams"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/register_btn" />
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

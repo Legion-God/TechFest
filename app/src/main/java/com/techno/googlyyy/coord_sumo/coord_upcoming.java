@@ -1,14 +1,16 @@
-package com.techno.googlyyy;
+package com.techno.googlyyy.coord_sumo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class coord_finished extends AppCompatActivity {
+import com.techno.googlyyy.R;
+
+public class coord_upcoming extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coord_finished);
+        setContentView(R.layout.activity_coord_upcoming);
     }
 }

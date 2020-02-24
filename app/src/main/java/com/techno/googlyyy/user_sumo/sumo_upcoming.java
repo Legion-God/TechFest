@@ -1,14 +1,16 @@
-package com.techno.googlyyy;
+package com.techno.googlyyy.user_sumo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class lan_live extends AppCompatActivity {
+import com.techno.googlyyy.R;
+
+public class sumo_upcoming extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lan_live);
+        setContentView(R.layout.activity_sumo_upcoming);
     }
 }

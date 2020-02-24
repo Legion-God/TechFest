@@ -1,14 +1,16 @@
-package com.techno.googlyyy;
+package com.techno.googlyyy.user_lan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class coord_information extends AppCompatActivity {
+import com.techno.googlyyy.R;
+
+public class lan_finished extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_coord_information);
+        setContentView(R.layout.activity_lan_finished);
     }
 }

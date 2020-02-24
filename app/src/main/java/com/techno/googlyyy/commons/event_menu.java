@@ -1,4 +1,4 @@
-package com.techno.googlyyy;
+package com.techno.googlyyy.commons;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.firebase.auth.FirebaseAuth;
+import com.techno.googlyyy.R;
+import com.techno.googlyyy.user_lan.lan_game_menu;
+import com.techno.googlyyy.user_sumo.sumo_menu;
 
 public class event_menu extends AppCompatActivity implements View.OnClickListener{
 

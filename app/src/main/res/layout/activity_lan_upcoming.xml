@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/upcoming_bg"
-    tools:context=".lan_upcoming">
+    tools:context=".user_lan.lan_upcoming">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

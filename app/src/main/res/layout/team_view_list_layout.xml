@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/team_view_imageView"
+        android:background="@drawable/card_common_team"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/team_view_tnum"
+        android:layout_alignStart="@+id/team_view_imageView"
+        android:layout_alignEnd="@+id/team_view_imageView"
+        android:layout_alignTop="@+id/team_view_imageView"
+        android:paddingTop="25dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="10dp"
+        android:text="Team number"
+        android:textColor="#FFFF"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/team_view_tname"
+        android:layout_alignStart="@+id/team_view_imageView"
+        android:layout_alignEnd="@+id/team_view_imageView"
+        android:layout_alignTop="@+id/team_view_tnum"
+        android:paddingTop="60dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="10dp"
+        android:text="Team name"
+        android:textColor="#FFFF"
+        android:textSize="25sp"/>
+
+
+
+</RelativeLayout>

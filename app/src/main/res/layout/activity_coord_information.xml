@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".coord_information">
+    tools:context=".coord_sumo.coord_information">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

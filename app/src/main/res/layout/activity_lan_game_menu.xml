@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".lan_game_menu">
+    tools:context=".user_lan.lan_game_menu">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

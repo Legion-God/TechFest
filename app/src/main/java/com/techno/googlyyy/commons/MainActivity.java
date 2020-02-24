@@ -1,4 +1,4 @@
-package com.techno.googlyyy;
+package com.techno.googlyyy.commons;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.techno.googlyyy.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 

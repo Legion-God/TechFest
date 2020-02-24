@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".sumo_menu">
+    tools:context=".user_sumo.sumo_menu">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

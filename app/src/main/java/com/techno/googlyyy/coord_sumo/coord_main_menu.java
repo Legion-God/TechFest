@@ -1,4 +1,4 @@
-package com.techno.googlyyy;
+package com.techno.googlyyy.coord_sumo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.techno.googlyyy.R;
+import com.techno.googlyyy.commons.coordinator_login;
 
 public class coord_main_menu extends AppCompatActivity implements View.OnClickListener{
 

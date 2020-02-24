@@ -1,8 +1,10 @@
-package com.techno.googlyyy;
+package com.techno.googlyyy.user_sumo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.techno.googlyyy.R;
 
 public class sumo_finished extends AppCompatActivity {
 

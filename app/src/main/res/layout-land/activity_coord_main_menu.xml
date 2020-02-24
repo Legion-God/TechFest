@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/coord_main_menu_landscape_bg"
-    tools:context=".coord_main_menu">
+    tools:context=".coord_sumo.coord_main_menu">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_height="match_parent"

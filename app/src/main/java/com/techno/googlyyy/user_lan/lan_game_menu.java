@@ -1,4 +1,4 @@
-package com.techno.googlyyy;
+package com.techno.googlyyy.user_lan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.techno.googlyyy.R;
 
 public class lan_game_menu extends AppCompatActivity implements View.OnClickListener{
 
