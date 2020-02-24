@@ -1,4 +1,4 @@
-package com.techno.googlyyy;
+package com.techno.googlyyy.data_model_classes;
 
 public class cmn_team_structure {
 

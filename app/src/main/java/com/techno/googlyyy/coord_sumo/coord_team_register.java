@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.techno.googlyyy.R;
-import com.techno.googlyyy.cmn_team_structure;
+import com.techno.googlyyy.data_model_classes.cmn_team_structure;
 
 public class coord_team_register extends AppCompatActivity implements View.OnClickListener {
     //only for sumo class
@@ -54,9 +54,11 @@ public class coord_team_register extends AppCompatActivity implements View.OnCli
                    Log.i("Numbers","Incorrect number format");
                 }
 
+    //add childs back to line 59
 
+                String Tid = mDatabase.push().getKey();
                 cmn_team_structure sumo = new cmn_team_structure(team_name, team_num);
-                mDatabase.child("teams").child("team"+team_num).setValue(sumo); //team_num is unique number for each team in game category
+                mDatabase.child("teams").child(Tid).setValue(sumo); //team_num is unique number for each team in game category
                 Toast.makeText(this, "Team Added", Toast.LENGTH_SHORT).show();
 
             }
