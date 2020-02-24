@@ -53,7 +53,7 @@ public class coord_team_register extends AppCompatActivity implements View.OnCli
                 }catch (NumberFormatException e){
                    Log.i("Numbers","Incorrect number format");
                 }
-                
+
                 cmn_team_structure sumo = new cmn_team_structure(team_name, team_num);
 
                 mDatabase.child("teams").child("team"+team_num).setValue(sumo); //team_num is unique number for each team in game category

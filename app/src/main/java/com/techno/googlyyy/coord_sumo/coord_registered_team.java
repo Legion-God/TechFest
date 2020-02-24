@@ -42,13 +42,20 @@ public class coord_registered_team extends AppCompatActivity {
         teams = new ArrayList<>();//stores teams
     }
 
+    private void refresh(){
+        finish();
+        overridePendingTransition(0,0);
+        startActivity(getIntent());
+        overridePendingTransition(0,0);
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
 
 
 
-        ValueEventListener queyValueListener = new ValueEventListener() {
+        ValueEventListener queryValueListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -67,6 +74,8 @@ public class coord_registered_team extends AppCompatActivity {
 
                 team_adapter_list tAdapter = new team_adapter_list(coord_registered_team.this, teams);
                 listViewTeams.setAdapter(tAdapter);
+
+               // refresh();
             }
 
             @Override
@@ -76,7 +85,7 @@ public class coord_registered_team extends AppCompatActivity {
         };
 
         Query query = mDatabase.orderByChild("team_num");
-        query.addListenerForSingleValueEvent(queyValueListener);
+        query.addListenerForSingleValueEvent(queryValueListener);
     }
 
 }
