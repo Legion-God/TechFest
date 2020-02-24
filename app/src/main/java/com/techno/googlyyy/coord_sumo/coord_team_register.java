@@ -53,12 +53,10 @@ public class coord_team_register extends AppCompatActivity implements View.OnCli
                 }catch (NumberFormatException e){
                    Log.i("Numbers","Incorrect number format");
                 }
-
-    //add childs back to line 59
-
-                String Tid = mDatabase.push().getKey();
+                
                 cmn_team_structure sumo = new cmn_team_structure(team_name, team_num);
-                mDatabase.child("teams").child(Tid).setValue(sumo); //team_num is unique number for each team in game category
+
+                mDatabase.child("teams").child("team"+team_num).setValue(sumo); //team_num is unique number for each team in game category
                 Toast.makeText(this, "Team Added", Toast.LENGTH_SHORT).show();
 
             }

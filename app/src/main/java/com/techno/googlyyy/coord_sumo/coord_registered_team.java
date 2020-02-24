@@ -63,12 +63,11 @@ public class coord_registered_team extends AppCompatActivity {
                     cmn_team_structure sumoTeam = next.getValue(cmn_team_structure.class);
                     teams.add(sumoTeam);
 
-                   Log.i("CRASH_TEST","Value :"+next.child("team_name").getValue());
                 }
 
                 team_adapter_list tAdapter = new team_adapter_list(coord_registered_team.this, teams);
                 listViewTeams.setAdapter(tAdapter);
-            }            
+            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -76,7 +75,7 @@ public class coord_registered_team extends AppCompatActivity {
             }
         };
 
-        Query query = mDatabase.orderByKey();
+        Query query = mDatabase.orderByChild("team_num");
         query.addListenerForSingleValueEvent(queyValueListener);
     }
 
