@@ -1,5 +1,6 @@
 package com.techno.googlyyy.adapters;
 import android.app.Activity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,8 +56,8 @@ public class live_adapter_list extends ArrayAdapter<cmn_live_matches_structure> 
         team1Score.setText(tempteam1score);
         team2Score.setText(tempteam2score);
 
-
-        winner.setText(matchObj.getWinner());
+        String tempWinner = "Winner: "+matchObj.getWinner();
+     winner.setText(tempWinner);
 
         return listViewItem;
     }

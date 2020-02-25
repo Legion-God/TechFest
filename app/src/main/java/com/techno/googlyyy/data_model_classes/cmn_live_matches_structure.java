@@ -7,7 +7,7 @@ public class cmn_live_matches_structure {
     String team2;
     Integer team1score;
     Integer team2score;
-    String Winner;
+    String winner;
 
     public cmn_live_matches_structure(Integer round, Integer group, String team1, String team2, Integer team1score, Integer team2score, String winner) {
         this.round = round;
@@ -16,7 +16,7 @@ public class cmn_live_matches_structure {
         this.team2 = team2;
         this.team1score = team1score;
         this.team2score = team2score;
-        Winner = winner;
+        this.winner = winner;
     }
 
     public cmn_live_matches_structure() {
@@ -48,6 +48,6 @@ public class cmn_live_matches_structure {
 
 
     public String getWinner() {
-        return Winner;
+        return winner;
     }
 }

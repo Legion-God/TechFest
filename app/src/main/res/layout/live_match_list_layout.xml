@@ -88,12 +88,12 @@
 
         <TextView
             android:id="@+id/live_winner_layout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
             android:layout_marginTop="210dp"
             android:text="Winner Team:"
             android:textColor="#FFF"
+            android:gravity="center"
             android:textSize="30sp" />
 
 
