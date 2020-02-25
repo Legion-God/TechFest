@@ -11,7 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".coord_sumo.coord_live_view_matches"></activity>
+
+        <activity android:name=".user_soccer.soccer_game_menu"></activity>
+        <activity android:name=".user_soccer.soccer_finished" />
+        <activity android:name=".user_soccer.soccer_upcoming" />
+        <activity android:name=".user_soccer.soccer_live" />
+        <activity android:name=".user_race.race_upcoming" />
+        <activity android:name=".user_race.race_game_menu" />
+        <activity android:name=".user_race.race_live" />
+        <activity android:name=".user_race.race_finished" />
+        <activity android:name=".user_line.line_upcoming" />
+        <activity android:name=".user_line.line_live" />
+        <activity android:name=".user_line.line_game_menu" />
+        <activity android:name=".user_line.line_finished" />
+
         <activity android:name=".coord_sumo.coord_upcoming_view_matches" />
         <activity android:name=".coord_sumo.coord_registered_team" />
         <activity android:name=".coord_sumo.coord_information" />
