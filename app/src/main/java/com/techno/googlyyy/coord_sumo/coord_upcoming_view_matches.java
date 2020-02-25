@@ -51,10 +51,8 @@ public class coord_upcoming_view_matches extends AppCompatActivity {
 
                 cmn_upcoming_structure single_match_obj = dataSnapshot.getValue(cmn_upcoming_structure.class);
 
-                Log.i("CRASH_TEST00111",""+dataSnapshot.getValue(cmn_upcoming_structure.class));
-
-
                 upcoming_adapter_list tAdapter = new upcoming_adapter_list(coord_upcoming_view_matches.this, matches);
+
                 tAdapter.add(single_match_obj);
                 tAdapter.notifyDataSetChanged();
                 listViewMatches.setAdapter(tAdapter);
@@ -63,13 +61,26 @@ public class coord_upcoming_view_matches extends AppCompatActivity {
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
+                cmn_upcoming_structure single_match_obj = dataSnapshot.getValue(cmn_upcoming_structure.class);
+
+                upcoming_adapter_list tAdapter = new upcoming_adapter_list(coord_upcoming_view_matches.this, matches);
+                tAdapter.add(single_match_obj);
+                tAdapter.notifyDataSetChanged();
+                refresh();
+
+                listViewMatches.setAdapter(tAdapter);
 
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                cmn_upcoming_structure single_match_obj = dataSnapshot.getValue(cmn_upcoming_structure.class);
 
+                upcoming_adapter_list tAdapter = new upcoming_adapter_list(coord_upcoming_view_matches.this, matches);
+                tAdapter.add(single_match_obj);
+                refresh();
 
+                listViewMatches.setAdapter(tAdapter);
 
             }
 
@@ -85,6 +96,12 @@ public class coord_upcoming_view_matches extends AppCompatActivity {
         });
 
 
+    }
+    private void refresh(){ //refreshes the activity
+        finish();
+        //overridePendingTransition(0,0);
+        startActivity(getIntent());
+        //overridePendingTransition(0,0);
     }
 
     @Override
