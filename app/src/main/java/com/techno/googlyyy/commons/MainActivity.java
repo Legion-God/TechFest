@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         google_sign = findViewById(R.id.google_sign_in);
         google_sign.setOnClickListener(this);
 
-        signOutbutton = findViewById(R.id.sign_out_btn);
-        signOutbutton.setOnClickListener(this);
+
+
 
         coord_log = findViewById(R.id.coordinator_signin);
         coord_log.setOnClickListener(this);
@@ -151,9 +151,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.coordinator_signin:
                 goToCoordinator();
                 break;
-            case R.id.sign_out_btn:
-                log_out();
-                break;
+
 
                 default:
                     break;
