@@ -4,10 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -15,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.techno.googlyyy.R;
 import com.techno.googlyyy.adapters.team_adapter_list;
 import com.techno.googlyyy.data_model_classes.*;
@@ -36,6 +42,17 @@ public class coord_upcoming_view_matches extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference("sumo/upcoming/groups");
         listViewMatches = findViewById(R.id.listView_matches);
 
+        listViewMatches.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                cmn_upcoming_structure actionDataObj = matches.get(position);
+                actionDialog(actionDataObj.getGroup()+"");
+
+                return true;
+            }
+        });
+
         matches = new ArrayList<>();
         //store each match instance
     }
@@ -51,10 +68,8 @@ public class coord_upcoming_view_matches extends AppCompatActivity {
 
                 cmn_upcoming_structure single_match_obj = dataSnapshot.getValue(cmn_upcoming_structure.class);
 
-                Log.i("CRASH_TEST00111",""+dataSnapshot.getValue(cmn_upcoming_structure.class));
-
-
                 upcoming_adapter_list tAdapter = new upcoming_adapter_list(coord_upcoming_view_matches.this, matches);
+
                 tAdapter.add(single_match_obj);
                 tAdapter.notifyDataSetChanged();
                 listViewMatches.setAdapter(tAdapter);
@@ -63,13 +78,26 @@ public class coord_upcoming_view_matches extends AppCompatActivity {
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
+                cmn_upcoming_structure single_match_obj = dataSnapshot.getValue(cmn_upcoming_structure.class);
+
+                upcoming_adapter_list tAdapter = new upcoming_adapter_list(coord_upcoming_view_matches.this, matches);
+                tAdapter.add(single_match_obj);
+                tAdapter.notifyDataSetChanged();
+                refresh();
+
+                listViewMatches.setAdapter(tAdapter);
 
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                cmn_upcoming_structure single_match_obj = dataSnapshot.getValue(cmn_upcoming_structure.class);
 
+                upcoming_adapter_list tAdapter = new upcoming_adapter_list(coord_upcoming_view_matches.this, matches);
+                tAdapter.add(single_match_obj);
+                refresh();
 
+                listViewMatches.setAdapter(tAdapter);
 
             }
 
@@ -85,6 +113,55 @@ public class coord_upcoming_view_matches extends AppCompatActivity {
         });
 
 
+    }
+
+    private void moveToLive(String grpNum){
+         DatabaseReference movFrom = FirebaseDatabase.getInstance().getReference("sumo/upcoming/groups").child("group"+grpNum);
+         DatabaseReference movTo = FirebaseDatabase.getInstance().getReference("sumo/live").child("group"+grpNum);
+
+
+
+    }
+
+    private void delMatch(String grpNum){   //grpNum is unique to each match
+
+        DatabaseReference del = FirebaseDatabase.getInstance().getReference("sumo/upcoming/groups").child("group"+grpNum);
+        del.removeValue();
+        Toast.makeText(this, "Match Deleted", Toast.LENGTH_SHORT).show();
+    }
+
+    private void actionDialog(final String grpNum){
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Choose Action");
+        builder.setMessage("Delete this match?\n\nSet this match to Live?")
+                .setPositiveButton("Live", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //live function code here
+                        //delete the selected match
+                        //send the data to live activity and add to sumo/live.
+                        moveToLive(grpNum);
+                    }
+                })
+                .setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //delete function code here
+                        delMatch(grpNum);
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+    }
+
+    private void refresh(){ //refreshes the activity
+        finish();
+        //overridePendingTransition(0,0);
+        startActivity(getIntent());
+        //overridePendingTransition(0,0);
     }
 
     @Override
