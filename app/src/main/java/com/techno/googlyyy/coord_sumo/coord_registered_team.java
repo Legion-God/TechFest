@@ -145,8 +145,6 @@ public class coord_registered_team extends AppCompatActivity {
 
         del.removeValue();
         Toast.makeText(this, "Team Deleted", Toast.LENGTH_SHORT).show();
-
-
     }
 
     private void deleteDialog(String tname,final String tnum){
