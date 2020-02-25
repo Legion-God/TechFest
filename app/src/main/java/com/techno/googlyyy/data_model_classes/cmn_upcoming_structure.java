@@ -9,9 +9,6 @@ public class cmn_upcoming_structure {
     String date;
     String time;
 
-    public cmn_upcoming_structure() {
-    }
-
     public cmn_upcoming_structure(Integer round, Integer group, String team1, String team2, String date, String time) {
         this.round = round;
         this.group = group;
@@ -20,6 +17,10 @@ public class cmn_upcoming_structure {
         this.date = date;
         this.time = time;
     }
+
+    public cmn_upcoming_structure() {
+    }
+
 
     public Integer getRound() {
         return round;
@@ -44,4 +45,6 @@ public class cmn_upcoming_structure {
     public String getTime() {
         return time;
     }
+
+
 }

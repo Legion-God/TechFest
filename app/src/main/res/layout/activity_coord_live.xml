@@ -15,16 +15,130 @@
         >
 
 
+
         <TextView
-            android:id="@+id/coord_live_text"
+            android:id="@+id/team_live_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="28dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="40dp"
             android:text="Live"
             android:textColor="#FFFF"
             android:textSize="45sp"
             android:textStyle="bold"
-            />
+            app:layout_constraintBottom_toTopOf="@id/live_Round_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/live_Round_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/coord_form_border"
+            android:ems="10"
+            android:hint="Round Number: "
+            android:inputType="numberSigned"
+            android:padding="15dp"
+            android:paddingStart="25dp"
+            android:textColor="#FFFF"
+            android:textColorHint="#FFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/live_Group_number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/team_live_text" />
+
+
+        <EditText
+            android:id="@+id/live_Group_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/coord_form_border"
+            android:ems="10"
+            android:hint="Group Number: "
+            android:inputType="numberSigned"
+            android:padding="15dp"
+            android:paddingStart="25dp"
+            android:textColor="#FFFF"
+            android:textColorHint="#FFFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/live_team1_spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/live_Round_number" />
+
+        <Spinner
+            android:id="@+id/live_team1_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/live_team2_spinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/live_Group_number" />
+
+        <Spinner
+            android:id="@+id/live_team2_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/set_live_team"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/live_team1_spinner" />
+
+        <Button
+            android:id="@+id/set_live_team"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/register_dark_btn"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:text="Set Matches"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/view_live_matches"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/live_team2_spinner" />
+
+        <Button
+            android:id="@+id/view_live_matches"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/register_dark_btn"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:text="View Matches"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/set_live_team" />
 
 
 
