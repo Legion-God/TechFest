@@ -25,6 +25,7 @@ public class team_adapter_list extends ArrayAdapter<cmn_team_structure> {
         this.teamList = teamList;
     }
 
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

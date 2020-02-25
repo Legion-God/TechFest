@@ -66,6 +66,14 @@ public class coord_team_register extends AppCompatActivity implements View.OnCli
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        startActivity(new Intent(this, coord_main_menu.class));
+        finish();
+    }
+
     private void goViewTeam(){
        startActivity(new Intent(this, coord_registered_team.class));
     }
