@@ -109,7 +109,7 @@ public class coord_upcoming extends AppCompatActivity {
 
                 //make proper directory struct
 
-                upcomingDatabase.child("groups").child("group"+dataObj.getGroup()).setValue(dataObj);
+                upcomingDatabase.child("groups").child("group"+dataObj.getGroup()+"round"+dataObj.getRound()).setValue(dataObj);
                 Toast.makeText(this, "Match set", Toast.LENGTH_SHORT).show();
 
             }else{

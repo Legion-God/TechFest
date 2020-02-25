@@ -47,7 +47,7 @@ public class coord_upcoming_view_matches extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
                 cmn_upcoming_structure actionDataObj = matches.get(position);
-                actionDialog(actionDataObj.getGroup()+"");
+                actionDialog(actionDataObj.getGroup()+"",actionDataObj.getRound()+"");
 
                 return true;
             }
@@ -116,21 +116,21 @@ public class coord_upcoming_view_matches extends AppCompatActivity {
     }
 
     private void moveToLive(String grpNum){
-         DatabaseReference movFrom = FirebaseDatabase.getInstance().getReference("sumo/upcoming/groups").child("group"+grpNum);
-         DatabaseReference movTo = FirebaseDatabase.getInstance().getReference("sumo/live").child("group"+grpNum);
+         //DatabaseReference movFrom = FirebaseDatabase.getInstance().getReference("sumo/upcoming/groups").child("group"+grpNum);
+        // DatabaseReference movTo = FirebaseDatabase.getInstance().getReference("sumo/live").child("group"+grpNum);
 
-
+            //TODO: implement this
 
     }
 
-    private void delMatch(String grpNum){   //grpNum is unique to each match
+    private void delMatch(String grpNum, String rndNum){   //grpNum is unique to each match
 
-        DatabaseReference del = FirebaseDatabase.getInstance().getReference("sumo/upcoming/groups").child("group"+grpNum);
+        DatabaseReference del = FirebaseDatabase.getInstance().getReference("sumo/upcoming/groups").child("group"+grpNum+"round"+rndNum);
         del.removeValue();
         Toast.makeText(this, "Match Deleted", Toast.LENGTH_SHORT).show();
     }
 
-    private void actionDialog(final String grpNum){
+    private void actionDialog(final String grpNum,final String rndNum){
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Choose Action");
@@ -148,7 +148,7 @@ public class coord_upcoming_view_matches extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //delete function code here
-                        delMatch(grpNum);
+                        delMatch(grpNum,rndNum);
                     }
                 });
 
